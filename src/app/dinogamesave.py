@@ -424,13 +424,15 @@ class MultiDinoGame:
     def get_state(self):
         """
         This function returns a list of states with 8 values for each dino:
-        [[DY, X1, Y1, W1, H1, X2, Y2, H2, W2,  GS]]
+        [[DY, X1, Y1, H1, W1, X2, Y2, H2, W2, GS]]
             
-        DY: Distance in Y of the dinosaur.
-        X1, Y1: Distance in X and Y from the first closest obstacle.
-        H1: Height of the first closest obstacle.
-        X2, Y2: Distance in X and Y from the second closest obstacle.
-        H2: Height of the second closest obstacle.
+        DY: Distancia Y do dino.
+        X1, Y1: Distancia X e Y do primeiro obstaculo.
+        H1: Altura do obstaculo
+        W1: Comprimento do obstaculo
+        X2, Y2: Distancia X e Y do segundo obstaculo.
+        H2: Altura do segundo obstaculo
+        W2: Comprimento do segundo obstaculo
         GS: Game speed.
         """
         
