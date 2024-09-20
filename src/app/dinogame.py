@@ -386,8 +386,6 @@ class MultiDinoGame:
         self.new_ground.update()
         self.scb.update(max(self.get_scores()))
         self.highsc.update(self.high_score)
-        if 50000 < max(self.get_scores()):
-            self.game_over = True
         self.screen.fill(BACKGROUND_COL)
         self.new_ground.draw()
         self.clouds.draw(self.screen)
@@ -406,6 +404,10 @@ class MultiDinoGame:
         # Renderiza o gamespeed
         gamespeed_text = self.font.render(f'Game Speed: {self.gamespeed}', True, (0, 0, 0))
         self.screen.blit(gamespeed_text, (10, 10))  # Posição (10, 10) na tela
+
+        # Renderiza o gamespeed
+        dinocount = self.font.render(f'Dino Count: {self.dino_count}', True, (0, 0, 0))
+        self.screen.blit(dinocount, (10, 30))  # Posição (10, 10) na tela
 
         pygame.display.update()
         self.clock.tick(self.fps)
