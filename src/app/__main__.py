@@ -1,5 +1,5 @@
 import random
-from chrome_trex import MultiDinoGame, ACTION_UP, ACTION_DOWN
+from dinogame import MultiDinoGame, ACTION_UP, ACTION_DOWN
 
 # Configurações do Algoritmo Genético
 POPULATION_SIZE = 70
@@ -24,7 +24,7 @@ def evolve_population(population, best_individual):
     #new_population.append([-969.9747823465515, -650.32064247121, -162.86909870427598, 337.23620509601096, -67.69696867986943, 802.9135481475676, -132.73599107958, -124.19254050945483, 982.0102558513966, -981.1091337906228])
 
     print(best_individual)
-    for _ in range(POPULATION_SIZE - 3):
+    for _ in range(POPULATION_SIZE - 1):
         mutated_weights = mutate(best_individual[:])  # Aplica mutação ao melhor indivíduo
         new_population.append(mutated_weights)
     return new_population

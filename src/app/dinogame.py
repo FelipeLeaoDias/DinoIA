@@ -85,6 +85,8 @@ def extract_digits(number):
         for i in range(len(digits), 5):
             digits.append(0)
         digits.reverse()
+        if len(digits) > 5:
+            digits.remove(0)
         return digits
 
 
@@ -384,7 +386,7 @@ class MultiDinoGame:
         self.new_ground.update()
         self.scb.update(max(self.get_scores()))
         self.highsc.update(self.high_score)
-        if 15000 < max(self.get_scores()):
+        if 50000 < max(self.get_scores()):
             self.game_over = True
         self.screen.fill(BACKGROUND_COL)
         self.new_ground.draw()
