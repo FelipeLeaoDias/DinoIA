@@ -405,8 +405,8 @@ class MultiDinoGame:
         gamespeed_text = self.font.render(f'Game Speed: {self.gamespeed}', True, (0, 0, 0))
         self.screen.blit(gamespeed_text, (10, 10))  # Posição (10, 10) na tela
 
-        # Renderiza o gamespeed
-        dinocount = self.font.render(f'Dino Count: {self.dino_count}', True, (0, 0, 0))
+        # Renderiza a contagem de dinos vivos
+        dinocount = self.font.render(f'Dinos Vivos: {len(self.alive_players)}', True, (0, 0, 0))
         self.screen.blit(dinocount, (10, 30))  # Posição (10, 10) na tela
 
         pygame.display.update()

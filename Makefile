@@ -10,13 +10,21 @@ install: ## Install Python requirements.
 	poetry install --no-root
 	poetry run pre-commit install
 
-.PHONY: run
-run: ## Rodar melhor agente
-	poetry run python src/app/testagent.py
+.PHONY: runuc
+run: ## Rodar melhor agente de Unica Camada
+	poetry run python src/app/testagentUC.py
 
-.PHONY: runtrain
-runtrain: ## Rodar treino
-	poetry run python -m src.app
+.PHONY: runtrainuc
+runtrain: ## Rodar treino de Unica Camada
+	poetry run python src/app/mainUC.py
+
+.PHONY: runmc
+run: ## Rodar melhor agente de Multi Camadas
+	poetry run python src/app/testagentMC.py
+
+.PHONY: runtrainmc
+runtrain: ## Rodar treino de Multi Camadas
+	poetry run python src/app/mainMC.py
 
 
 .DEFAULT_GOAL := help
