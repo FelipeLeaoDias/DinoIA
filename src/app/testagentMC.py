@@ -3,7 +3,7 @@ import json
 from dinogame import DinoGame, ACTION_UP, ACTION_DOWN
 
 
-with open("src/app/best_agentMC.json", "r") as infile:
+with open("best_agentMC.json", "r") as infile:
     data = json.load(infile)
 DINOAGENT = data['b_agent']
 FPS = 0

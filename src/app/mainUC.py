@@ -5,7 +5,7 @@ import math
 from dinogame import MultiDinoGame, ACTION_UP, ACTION_DOWN
 
 # Configurações do Algoritmo Genético
-POPULATION_SIZE = 300
+POPULATION_SIZE = 150
 GENERATIONS = 500
 MUTATION_RATE = 0.3
 FPS = 0
@@ -25,7 +25,7 @@ def mutate(weights):
 def evolve_population(population, best_individual):
     new_population = [best_individual]  # Mantém o melhor indivíduo sem mutação
 
-    print(best_individual)
+    #print(best_individual)
     for _ in range(POPULATION_SIZE - 1):
         mutated_weights = mutate(best_individual[:])  # Aplica mutação ao melhor indivíduo
         new_population.append(mutated_weights)
@@ -74,13 +74,15 @@ def main():
             scores = game.get_scores()
 
             # Limite de pontos para pegar o melhor score
-            if 15000 < max(scores):
+            if 5000 < max(scores):
+                print("Agente Dino Infinito Encontrado!")
                 game.game_over = True
                 best_index = scores.index(max(scores))
                 best_agent = population[best_index]
                 json_dict = {'b_agent': best_agent}
                 with open("best_agentUC.json", "w+") as outfile:
                     json.dump(json_dict, outfile)
+                print("Melhor agente salvo!")
                 break
 
             # Atualiza o status de vivos/mortos
